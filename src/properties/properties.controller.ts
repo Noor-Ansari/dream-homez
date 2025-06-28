@@ -15,8 +15,12 @@ import { PropertiesService } from './properties.service';
 import { CreatePropertyDto } from './dtos/create-property.dto';
 import { PropertyQueryDto } from './dtos/query-property.dto';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { ThrottlerGuard } from '@nestjs/throttler';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
-@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard, ThrottlerGuard)
+@ApiTags('Properties')
+@ApiBearerAuth()
 @Controller('properties')
 export class PropertiesController {
   constructor(private readonly propertiesService: PropertiesService) {}
