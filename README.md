@@ -35,7 +35,7 @@ git clone https://github.com/Noor-Ansari/dream-homez.git
 cd dream-homez
 npm install
 npm run start:dev
-npm run start:dev
+Go to http://localhost:3000/api for Swagger Docs
 ```
 
 ### 2. Add ENV file with these properties
